@@ -11,9 +11,10 @@ class Application
       item_ = req.path.split("/items/").last
       if it = @@items.find {|i| i.name == item_}
         resp.write it.price
-      else 
+      else
         resp.write("Error\n")
         resp.status = 400
+      end
     else
       resp.write(req.path)
       resp.write("Route not found.\n")

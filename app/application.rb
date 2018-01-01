@@ -4,7 +4,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new
-    if req.path.match("/items")
+    if req.path == "/items"
       name = req.path.split("/items/").last
       resp.write "#{name}\n"
     else

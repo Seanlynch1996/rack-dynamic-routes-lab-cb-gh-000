@@ -9,7 +9,7 @@ class Application
     if req.path == "/items"
       item_ = req.path.split("/items/").last
       it = @@items.find {|i| i.name == item_}
-      it.price
+      resp.write it.price
     else
       resp.write("File not found.\n")
       resp.status = 404

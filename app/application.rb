@@ -8,7 +8,7 @@ class Application
     req = Rack::Request.new
     if req.path == "/items"
       name = req.path.split("/items/").last
-      resp.write "#{@@items[name].price}\n"
+      @@items[name].price
     else
       resp.write("File not found.\n")
       resp.status = 404

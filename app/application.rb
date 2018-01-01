@@ -12,7 +12,7 @@ class Application
       if it = @@items.find {|i| i.name == item_}
         resp.write it.price
       else
-        resp.write("Error\n")
+        resp.write("Item not found\n")
         resp.status = 400
       end
     else
